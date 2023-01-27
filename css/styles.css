@@ -6,6 +6,13 @@
 */
 
 /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*
 =============== 
 Variables
 ===============
@@ -91,6 +98,7 @@ h4 {
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 h1 {
   font-size: 3rem;
@@ -374,6 +382,8 @@ skills
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 .skill-icon {
   font-size: 1.5rem;
@@ -387,6 +397,8 @@ skills
   font-weight: 100;
 }
 .skill-section {
+  background: -o-linear-gradient(rgba(201, 132, 3, 0.9), rgba(0, 0, 0, 0.9)),
+    url('../images/skills.jpg') center/cover no-repeat scroll;
   background: -webkit-gradient(
       linear,
       left top,
@@ -394,8 +406,6 @@ skills
       from(rgba(201, 132, 3, 0.9)),
       to(rgba(0, 0, 0, 0.9))
     ),
-    url('../images/skills.jpg') center/cover no-repeat scroll;
-  background: -o-linear-gradient(rgba(201, 132, 3, 0.9), rgba(0, 0, 0, 0.9)),
     url('../images/skills.jpg') center/cover no-repeat scroll;
   background: linear-gradient(rgba(201, 132, 3, 0.9), rgba(0, 0, 0, 0.9)),
     url('../images/skills.jpg') center/cover no-repeat scroll;
@@ -411,10 +421,10 @@ skills
 .ci:hover {
   background: rgba(0, 0, 0, 0.7);
   color: rgb(49, 46, 46);
-  -webkit-transform: scale(1.04);
+  -webkit-transform: zscale(1.04);
   -ms-transform: scale(1.04);
-  transform: scale(1.04);
 }
+
 .language .underline,
 .libraries .underline,
 .framework .underline,
@@ -561,6 +571,8 @@ label {
 }
 
 .message-section {
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url('../images/message.jpg') center/cover no-repeat scroll;
   background: -webkit-gradient(
       linear,
       left top,
@@ -568,8 +580,6 @@ label {
       from(rgba(0, 0, 0, 0.9)),
       to(rgba(0, 0, 0, 0.9))
     ),
-    url('../images/message.jpg') center/cover no-repeat scroll;
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
     url('../images/message.jpg') center/cover no-repeat scroll;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
     url('../images/message.jpg') center/cover no-repeat scroll;
@@ -814,9 +824,38 @@ portfolio
   visibility: hidden;
 }
 .portfolio-item:hover {
-  -webkit-transform: skewX(2deg);
-  -ms-transform: skewX(2deg);
-  transform: skewX(2deg);
+  -webkit-animation: rotate 1.8s linear 1;
+  animation: rotate 1.8s linear 1;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
 }
 .portfolio-item:hover .portfolio-img {
   visibility: hidden;
@@ -837,13 +876,13 @@ portfolio
 } */
 .port-btn {
   display: block;
-  background: rgb(161, 154, 154);
+  background: rgba(0, 0, 0, 0.7);
   padding: 0.3rem 0.5rem;
   letter-spacing: var(--spacing);
   cursor: pointer;
   width: 40%;
   margin: 1rem auto;
-  color: black;
+  color: white;
 }
 .port1-btn {
   width: 30%;
@@ -852,10 +891,10 @@ portfolio
   padding: 1.2rem;
 }
 .port-menu span a {
-  color: black;
+  color: white;
 }
 .port-menu span {
-  background: rgb(161, 154, 154);
+  background: rgb(201, 132, 3, 0.9);
   border-radius: var(--radius);
   padding: 0.3rem 0.5rem;
   letter-spacing: var(--spacing);
@@ -889,6 +928,8 @@ portfolio
   -webkit-box-shadow: var(--dark-shadow);
   box-shadow: var(--dark-shadow);
   margin: 1rem 0.19rem;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 .portfolio-section {
   background: #eee;
